@@ -1,0 +1,52 @@
+#content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    #sidebar {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        background-color: lightgray;
+
+        .mat-nested-tree-node div[role=group] {
+            padding-left: 40px;
+            cursor: pointer;
+
+            .opened {
+                padding-left: 8px;
+                background-color: lightcoral;
+            }
+        }
+        .invisible-node {
+            display: none;
+        }
+
+        .node .button {
+            display: none;
+        }
+        .node:hover .button {
+            display: inline-block;
+        }
+    }
+
+    #editor {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    button {
+        width: 100%;
+    }
+}
+
