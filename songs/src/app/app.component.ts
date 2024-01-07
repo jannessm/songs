@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { CommonModule, KeyValuePipe } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,11 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatBottomSheet,
   MatBottomSheetModule,
-  MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import { AddFormSheet } from './add-form.component';
 
 const API = 'http://localhost:8000/';
+if (!isDevMode()) {
+  const API = '/api/';
+}
 
 @Component({
   selector: 'app-root',
