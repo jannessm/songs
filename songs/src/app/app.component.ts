@@ -1,5 +1,5 @@
-import { Component, isDevMode } from '@angular/core';
-import { CommonModule, KeyValuePipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,11 +14,9 @@ import {
   MatBottomSheetModule,
 } from '@angular/material/bottom-sheet';
 import { AddFormSheet } from './add-form.component';
+import { environment } from '../environments/environment';
 
-const API = 'http://localhost:8000/';
-if (!isDevMode()) {
-  const API = '/api/';
-}
+const API = environment.API;
 
 @Component({
   selector: 'app-root',
