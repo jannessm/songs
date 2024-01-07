@@ -84,7 +84,7 @@ export class AppComponent {
   }
 
   hasChild(_: number, node: FilesTreeNode) {
-    return !!node.children && node.children.length > 0;
+    return !!node.children && node.children.length > 0 || node.f.name == 'ghs' || node.f.name == 'ccli';
   };
 
   update() {
