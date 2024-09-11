@@ -1,11 +1,10 @@
-version: '3'
-
 services:
   songs:
     image: php:8.2-apache
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.songs.entrypoints=web,websecure"
       - "traefik.http.routers.songs.rule=Host(`songs.magnusso.nz`)"
       - "traefik.http.routers.songs.tls.certresolver=myresolver"
       - "traefik.http.services.songs.loadbalancer.server.port=80"
